@@ -3,3 +3,31 @@
   height: 100vh;
   place-items: center;
 }
+
+.Entry {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  place-content: center;
+}
+
+.Logo {
+  width: 80px;
+}
+
+.Title {
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+  font-weight: 800;
+}
+
+.Subtitle {
+  color: var(--color-secondary);
+  font-size: 1.3rem;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

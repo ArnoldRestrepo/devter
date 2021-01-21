@@ -9,7 +9,8 @@
 
 @media (min-width: 668px) {
   .Main {
-    width: var(--breakpoint);
+    max-width: var(--breakpoint);
+    width: 100%;
     height: 90vh;
   }
 }

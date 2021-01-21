@@ -12,10 +12,18 @@ export default function Home() {
       </Head>
 
       <AppLayout>
-        <h1 className={styles.title}>
-          <a href='https://nextjs.org'>Devter</a>
-        </h1>
-        <Link href='/timeline'>Timeline</Link>
+        <section className={styles.Entry}>
+          <img
+            src='/devter-logo.png'
+            className={styles.Logo}
+            alt='Logo Devter'
+          />
+          <h1 className={styles.Title}>Devter</h1>
+          <h2 className={styles.Subtitle}>
+            Talk about development <br />
+            with developers 👩‍💻👨‍💻
+          </h2>
+        </section>
       </AppLayout>
     </div>
   );
