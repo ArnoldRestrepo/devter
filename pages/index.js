@@ -1,12 +1,24 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import AppLayout from '../components/AppLayout';
 import Button from '../components/Button';
 import GitHub from '../components/Icons/Github';
+import { loginWithGitHub, onAuthStateChanged } from '../Firebase/Client';
 
 export default function Home() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(setUser);
+  }, []);
+
+  const handleSubmit = () => {
+    loginWithGitHub()
+      .then(setUser(user))
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -28,14 +40,24 @@ export default function Home() {
             Talk about development <br />
             with developers 👩‍💻👨‍💻
           </h2>
-          <Button
-            handleClick={handleSubmit}
-            type='button'
-            style={styles.Button}
-          >
-            <GitHub width='24' height='24' fill='white' />
-            Login with Github
-          </Button>
+          <div>
+            {user === null && (
+              <Button
+                handleClick={handleSubmit}
+                type='button'
+                style={styles.Button}
+              >
+                <GitHub width='24' height='24' fill='white' />
+                Login with Github
+              </Button>
+            )}
+            {user && user.avatar && (
+              <div>
+                <img width='100' height='100' src={user.avatar} />
+                <p>{user.username}</p>
+              </div>
+            )}
+          </div>
         </section>
       </AppLayout>
     </div>
