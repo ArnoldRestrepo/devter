@@ -1,4 +1,4 @@
-export default function GitHub(props) {
+export default function GitHub (props) {
   return (
     <svg
       width={1024}
@@ -14,5 +14,5 @@ export default function GitHub(props) {
         fill={props.fill}
       />
     </svg>
-  );
+  )
 }

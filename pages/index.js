@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react';
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import AppLayout from '../components/AppLayout';
-import Button from '../components/Button';
-import GitHub from '../components/Icons/Github';
-import { loginWithGitHub, onAuthStateChanged } from '../Firebase/Client';
+import { useEffect, useState } from 'react'
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
+import AppLayout from '../components/AppLayout'
+import Button from '../components/Button'
+import GitHub from '../components/Icons/Github'
+import { loginWithGitHub, onAuthStateChanged } from '../Firebase/Client'
 
-export default function Home() {
-  const [user, setUser] = useState(null);
+export default function Home () {
+  const [user, setUser] = useState(null)
 
   useEffect(() => {
-    onAuthStateChanged(setUser);
-  }, []);
+    onAuthStateChanged(setUser)
+  }, [])
 
   const handleSubmit = () => {
     loginWithGitHub()
       .then(setUser(user))
       .catch((err) => {
-        console.log(err);
-      });
-  };
+        console.log(err)
+      })
+  }
 
   return (
     <div className={styles.Container}>
@@ -61,5 +61,5 @@ export default function Home() {
         </section>
       </AppLayout>
     </div>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-export default function Button({ children, handleClick, type, style }) {
+export default function Button ({ children, handleClick, type, style }) {
   return (
     <>
       <button onClick={handleClick} type={type} className={style}>
@@ -30,5 +30,5 @@ export default function Button({ children, handleClick, type, style }) {
         `}
       </style>
     </>
-  );
+  )
 }
