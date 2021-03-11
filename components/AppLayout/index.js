@@ -1,5 +1,5 @@
-import styles from '../../styles/AppLayout.module.css'
+import styles from 'styles/AppLayout.module.css'
 
-export default function AppLayout ({ children }) {
+export default function AppLayout({ children }) {
   return <main className={styles.Main}>{children}</main>
 }

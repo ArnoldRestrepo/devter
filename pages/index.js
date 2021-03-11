@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import AppLayout from '../components/AppLayout'
-import Button from '../components/Button'
-import GitHub from '../components/Icons/Github'
-import Avatar from '../components/Avatar'
-import { loginWithGitHub, onAuthStateChanged } from '../Firebase/Client'
+import { loginWithGitHub, onAuthStateChanged } from 'Firebase/Client'
+
+import AppLayout from 'components/AppLayout'
+import Button from 'components/Button'
+import GitHub from 'components/Icons/Github'
+import Avatar from 'components/Avatar'
+
+import styles from 'styles/Home.module.css'
 
 export default function Home() {
   const [user, setUser] = useState(null)
