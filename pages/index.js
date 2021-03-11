@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css'
 import AppLayout from '../components/AppLayout'
 import Button from '../components/Button'
 import GitHub from '../components/Icons/Github'
+import Avatar from '../components/Avatar'
 import { loginWithGitHub, onAuthStateChanged } from '../Firebase/Client'
 
 export default function Home() {
@@ -52,10 +53,11 @@ export default function Home() {
               </Button>
             )}
             {user && user.avatar && (
-              <div>
-                <img width="100" height="100" src={user.avatar} />
-                <p>{user.username}</p>
-              </div>
+              <Avatar
+                src={user.avatar}
+                alt={user.username}
+                text={user.username}
+              />
             )}
           </div>
         </section>

@@ -1,7 +1,9 @@
-export default function Avatar ({alt, src, text}) {
+import styles from '../../styles/Avatar.module.css'
+
+export default function Avatar({ alt, src, text }) {
   return (
-    <article>
-      <img src={src} alt={alt}>
+    <article className={styles.Container}>
+      <img src={src} alt={alt} className={styles.Image} />
       {text && <strong>{text}</strong>}
     </article>
   )
