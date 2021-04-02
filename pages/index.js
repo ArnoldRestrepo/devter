@@ -5,6 +5,7 @@ import { loginWithGitHub, onAuthStateChanged } from 'Firebase/Client'
 import AppLayout from 'components/AppLayout'
 import Button from 'components/Button'
 import GitHub from 'components/Icons/Github'
+import Logo from 'components/Icons/Logo'
 import Avatar from 'components/Avatar'
 
 import styles from 'styles/Home.module.css'
@@ -33,11 +34,7 @@ export default function Home() {
 
       <AppLayout>
         <section className={styles.Entry}>
-          <img
-            src="/devter-logo.png"
-            className={styles.Logo}
-            alt="Logo Devter"
-          />
+          <Logo width="40" />
           <h1 className={styles.Title}>Devter</h1>
           <h2 className={styles.Subtitle}>
             Talk about development <br />
