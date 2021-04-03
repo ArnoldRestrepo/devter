@@ -26,7 +26,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.Container}>
+    <div className="Container">
       <Head>
         <title>Devter</title>
         <link rel="icon" href="/favicon.ico" />

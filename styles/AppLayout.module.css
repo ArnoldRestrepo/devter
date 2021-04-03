@@ -3,8 +3,9 @@
   height: 100%;
   background: #fff;
   border-radius: 10px;
-  padding: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 668px) {
