@@ -2,7 +2,7 @@ const timeline = [
   {
     id: '0',
     avatar:
-      'https://pbs.twimg.com/profile_images/1274822387532328960/feySZs0k_reasonably_small.jpg',
+      'https://pbs.twimg.com/profile_images/1377666038410539008/hhvm3ZwR_400x400.jpg',
     username: 'wongmjane',
     message: `Twitter Web App now runs ES6+ for modern browsers*, reducing the polyfill bundle size by 83%
   
@@ -23,7 +23,7 @@ const timeline = [
     username: 'd4nidev',
     name: 'Daniel de la Cruz',
     avatar:
-      'https://pbs.twimg.com/profile_images/1177987137892958208/egsJgx1b_reasonably_small.jpg',
+      'https://pbs.twimg.com/profile_images/1298571647180472320/zjkVwkJL_400x400.jpg',
     message: `Abro paraguas Paraguas
   
   Clean Code es un libro obsoleto que en 2020, con los paradigmas de desarrollo de software que manejamos, puede hacerte más daño que beneficio.`

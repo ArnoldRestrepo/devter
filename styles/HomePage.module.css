@@ -16,8 +16,12 @@
   border-bottom: 1px solid #ccc;
 }
 
-.Section {
+.TweetGrid {
   padding: 1rem;
+}
+
+.Tweet {
+  padding-bottom: 1rem 0;
 }
 
 .Title {
