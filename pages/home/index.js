@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import AppLayout from '../../components/AppLayout'
 import Avatar from '../../components/Avatar'
 import styles from '../../styles/HomePage.module.css'
+import Tweet from 'components/Tweet'
 
 export default function HomePage() {
   const [timeline, setTimeline] = useState([])
@@ -38,13 +39,15 @@ export default function HomePage() {
         </header>
         <section className={styles.TweetGrid}>
           {load && <p>Cargando...</p>}
-          {timeline?.map(tweet => {
+          {timeline?.map(({ id, username, message, avatar }) => {
             return (
-              <article key={uuidv4()} className={styles.tweet}>
-                <Avatar alt={tweet.username} src={tweet.avatar} isRounded />
-                <p>{tweet.message}</p>
-                <span>@{tweet.username}</span>
-              </article>
+              <Tweet
+                key={uuidv4()}
+                id={id}
+                username={username}
+                message={message}
+                avatar={avatar}
+              />
             )
           })}
         </section>
