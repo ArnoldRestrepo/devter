@@ -52,7 +52,7 @@ export default function HomePage() {
           })}
         </section>
         <nav className={styles.Menu}>
-          <p>Home</p>
+          <p>Hello</p>
         </nav>
       </AppLayout>
     </section>

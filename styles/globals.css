@@ -1,6 +1,7 @@
 :root {
   --color-primary: #0049ff;
   --color-primary-opacity: #0099ff25;
+  --color-white: #efefef;
   --color-secondary: #1c5480;
   --base-font: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;

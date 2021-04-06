@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { loginWithGitHub, onAuthStateChanged } from 'Firebase/Client'
 
 import AppLayout from 'components/AppLayout'
@@ -12,10 +13,15 @@ import styles from 'styles/Home.module.css'
 
 export default function Home() {
   const [user, setUser] = useState(null)
+  const router = useRouter()
 
   useEffect(() => {
     onAuthStateChanged(setUser)
   }, [])
+
+  useEffect(() => {
+    user && router.replace('/home')
+  }, [user])
 
   const handleSubmit = () => {
     loginWithGitHub()
