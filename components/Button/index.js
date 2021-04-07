@@ -1,7 +1,18 @@
-export default function Button({ children, handleClick, type, style }) {
+export default function Button({
+  children,
+  handleClick,
+  type,
+  style,
+  disabled
+}) {
   return (
     <>
-      <button onClick={handleClick} type={type} className={style}>
+      <button
+        onClick={handleClick}
+        type={type}
+        className={style}
+        disabled={disabled}
+      >
         {children}
       </button>
       <style jsx>
@@ -22,6 +33,11 @@ export default function Button({ children, handleClick, type, style }) {
 
           button > :global(svg) {
             margin-right: 8px;
+          }
+
+          button[disabled] {
+            opacity: 0.7;
+            pointer-events: none;
           }
 
           button:hover {

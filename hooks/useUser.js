@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { onAuthStateChanged } from 'firebase/Client'
+import { onAuthStateChanged } from 'firebase/client'
 
 // const USER_STATES = {
 //   NOT_LOGGED: null,
