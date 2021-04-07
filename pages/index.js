@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { loginWithGitHub, onAuthStateChanged } from 'Firebase/Client'
+import { loginWithGitHub } from 'Firebase/Client'
 
 import AppLayout from 'components/AppLayout'
 import Button from 'components/Button'
@@ -10,25 +10,20 @@ import Logo from 'components/Icons/Logo'
 import Avatar from 'components/Avatar'
 
 import styles from 'styles/Home.module.css'
+import useUser from 'hooks/useUser'
 
 export default function Home() {
-  const [user, setUser] = useState(null)
+  const user = useUser()
   const router = useRouter()
-
-  useEffect(() => {
-    onAuthStateChanged(setUser)
-  }, [])
 
   useEffect(() => {
     user && router.replace('/home')
   }, [user])
 
   const handleSubmit = () => {
-    loginWithGitHub()
-      .then(setUser(user))
-      .catch(err => {
-        console.log(err)
-      })
+    loginWithGitHub().catch(err => {
+      console.log(err)
+    })
   }
 
   return (
