@@ -1,4 +1,5 @@
 import firebase from 'firebase'
+import { normalizedDate } from '../utils'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -20,7 +21,7 @@ const mapUserFromFirebaseAuthToUser = user => {
 
   return {
     avatar: photoURL,
-    username: displayName,
+    userName: displayName,
     email,
     uid
   }
@@ -48,4 +49,23 @@ export const addDevit = ({ avatar, content, userId, userName }) => {
     likesCount: 0,
     sharedCount: 0
   })
+}
+
+export const fetchLatestDevits = async () => {
+  return db
+    .collection('devits')
+    .get()
+    .then(snapshot => {
+      return snapshot.docs.map(doc => {
+        const data = doc.data()
+        const { createdAt } = data
+        const id = doc.id
+        const date = new Date(createdAt.seconds * 1000)
+        return {
+          ...data,
+          id,
+          createdAt: normalizedDate(date)
+        }
+      })
+    })
 }

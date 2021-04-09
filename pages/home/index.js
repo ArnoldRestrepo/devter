@@ -5,22 +5,22 @@ import AppLayout from '../../components/AppLayout'
 import Avatar from '../../components/Avatar'
 import styles from '../../styles/HomePage.module.css'
 import Tweet from 'components/Tweet'
+import useUser from 'hooks/useUser'
+import { fetchLatestDevits } from 'firebase/client'
+import { isEmptyObject } from 'utils'
 
 export default function HomePage() {
+  const user = useUser()
   const [timeline, setTimeline] = useState([])
   const [load, setLoad] = useState(false)
 
   useEffect(() => {
     setLoad(true)
-    const API_URL = `http://localhost:3000`
-    const getTimeline = async () => {
-      const response = await fetch(`${API_URL}/api/statuses/home_timeline`)
-      const data = await response.json()
-      setTimeline(data)
-      setLoad(false)
-    }
-    getTimeline()
-  }, [])
+    user &&
+      fetchLatestDevits()
+        .then(setTimeline)
+        .then(setLoad(false))
+  }, [user])
 
   return (
     <section className="Container">
@@ -39,14 +39,16 @@ export default function HomePage() {
         </header>
         <section className={styles.TweetGrid}>
           {load && <p>Cargando...</p>}
-          {timeline?.map(({ id, username, message, avatar }) => {
+          {isEmptyObject(timeline) && <p>No hemos podido ver los Devits...</p>}
+          {timeline?.map(({ userId, userName, content, avatar, createdAt }) => {
             return (
               <Tweet
                 key={uuidv4()}
-                id={id}
-                username={username}
-                message={message}
+                userId={userId}
+                userName={userName}
+                content={content}
                 avatar={avatar}
+                createdAt={createdAt}
               />
             )
           })}

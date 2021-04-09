@@ -2,3 +2,12 @@
   display: flex;
   margin-bottom: 1rem 0;
 }
+
+.TweetContent p {
+  margin: 5px 0;
+}
+
+.CreatedAt {
+  color: var(--color-gray);
+  font-size: 0.9rem;
+}
