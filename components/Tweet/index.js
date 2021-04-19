@@ -1,6 +1,6 @@
 import Avatar from 'components/Avatar'
 import styles from '../../styles/Tweet.module.css'
-
+import useTimeAgo from '../../hooks/useTimeAgo'
 export default function Tweet({
   userName,
   avatar,
@@ -8,6 +8,7 @@ export default function Tweet({
   userId,
   createdAt
 }) {
+  const timeAgo = useTimeAgo(createdAt)
   return (
     <article className={styles.Tweet}>
       <Avatar alt={userName} src={avatar} />
@@ -15,7 +16,7 @@ export default function Tweet({
         <div>
           <strong>{userName}</strong>
           <span> . </span>
-          <span className={styles.CreatedAt}>{createdAt}</span>
+          <span className={styles.CreatedAt}>{timeAgo}</span>
         </div>
         <p>{content}</p>
       </div>
