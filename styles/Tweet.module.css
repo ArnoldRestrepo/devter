@@ -1,6 +1,7 @@
 .Tweet {
   display: flex;
-  margin-bottom: 1rem 0;
+  flex: 1 1 auto;
+  margin-bottom: 1rem;
 }
 
 .TweetContent p {
