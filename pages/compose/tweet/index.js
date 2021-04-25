@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import AppLayout from 'components/AppLayout'
 import styles from '../../../styles/Form.module.css'
 import Button from '../../../components/Button'
 import useUser from 'hooks/useUser'
-
 import { addDevit } from '../../../firebase/client'
 
 const COMPOSE_STATES = {
@@ -48,6 +48,9 @@ export default function ComposeTweet() {
   return (
     <main className="Container">
       <AppLayout>
+        <Head>
+          <title>Crear Tweet / Devter</title>
+        </Head>
         <form className={styles.ComposeTweetForm} onSubmit={handleSubmit}>
           <textarea
             className={styles.Textarea}

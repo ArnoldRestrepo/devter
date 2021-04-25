@@ -1,0 +1,33 @@
+.Menu {
+  position: sticky;
+  width: 100%;
+  height: 49px;
+  bottom: 0;
+  left: 0;
+  background: var(--color-white);
+  padding: 0 1rem;
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  justify-content: space-between;
+}
+
+.MenuLink {
+  height: 100%;
+}
+
+.MenuIcon:hover {
+  background: radial-gradient(#0099ff11 15%, transparent 16%);
+  background-size: 180px 180px;
+  background-position: center;
+}
+
+.MenuIcon {
+  cursor: pointer;
+  padding: 1px;
+}
+
+.MenuIcon:hover > :global(svg) {
+  stroke: var(--color-primary);
+}

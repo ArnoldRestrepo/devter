@@ -6,6 +6,8 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow-x: hidden;
+  display: grid;
+  grid-template-rows: 52px auto 49px;
 }
 
 @media (min-width: 668px) {
