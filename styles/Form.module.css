@@ -17,3 +17,32 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.DashBorder {
+  border: 3px dashed var(--color-primary);
+  cursor: move;
+}
+
+.UploadImgWrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.UploadImgButton {
+  background: rgba(0, 0, 0, 0.5);
+  border: 0;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  top: 15px;
+  right: 15px;
+  position: absolute;
+  color: #fefefe;
+  cursor: pointer;
+}
+
+.UploadImg {
+  width: 100%;
+  height: auto;
+}

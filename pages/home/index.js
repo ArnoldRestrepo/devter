@@ -28,18 +28,21 @@ export default function HomePage() {
       <section className={styles.TweetGrid}>
         {load && <p>Cargando...</p>}
         {isEmptyObject(timeline) && <p>No hemos podido ver los Devits...</p>}
-        {timeline?.map(({ userId, userName, content, avatar, createdAt }) => {
-          return (
-            <Tweet
-              key={uuidv4()}
-              userId={userId}
-              userName={userName}
-              content={content}
-              avatar={avatar}
-              createdAt={createdAt}
-            />
-          )
-        })}
+        {timeline?.map(
+          ({ userId, userName, content, avatar, createdAt, img }) => {
+            return (
+              <Tweet
+                key={uuidv4()}
+                userId={userId}
+                userName={userName}
+                content={content}
+                avatar={avatar}
+                img={img}
+                createdAt={createdAt}
+              />
+            )
+          }
+        )}
       </section>
     </>
   )

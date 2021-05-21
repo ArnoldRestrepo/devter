@@ -1,4 +1,3 @@
-import AppLayout from 'components/AppLayout'
 import Head from 'next/head'
 
 export default function Search() {
@@ -7,7 +6,7 @@ export default function Search() {
       <Head>
         <title>Search - Devter</title>
       </Head>
-      <AppLayout>Hello</AppLayout>
+      Hello
     </>
   )
 }
