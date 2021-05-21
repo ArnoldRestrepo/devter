@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import AppLayout from 'components/AppLayout'
 import styles from '../../../styles/Form.module.css'
 import Button from '../../../components/Button'
 import useUser from 'hooks/useUser'
@@ -46,20 +45,18 @@ export default function ComposeTweet() {
   const isButtonDisabled = !message.length || status === COMPOSE_STATES.LOADING
 
   return (
-    <main className="Container">
-      <AppLayout>
-        <Head>
-          <title>Crear Tweet / Devter</title>
-        </Head>
-        <form className={styles.ComposeTweetForm} onSubmit={handleSubmit}>
-          <textarea
-            className={styles.Textarea}
-            value={message}
-            onChange={handleMessage}
-          ></textarea>
-          <Button disabled={isButtonDisabled}>Devitear</Button>
-        </form>
-      </AppLayout>
-    </main>
+    <>
+      <Head>
+        <title>Crear Tweet / Devter</title>
+      </Head>
+      <form className={styles.ComposeTweetForm} onSubmit={handleSubmit}>
+        <textarea
+          className={styles.Textarea}
+          value={message}
+          onChange={handleMessage}
+        ></textarea>
+        <Button disabled={isButtonDisabled}>Devitear</Button>
+      </form>
+    </>
   )
 }
