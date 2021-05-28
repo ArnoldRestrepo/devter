@@ -24,7 +24,7 @@ export default function Tweet({
           )}
           <strong>{userName}</strong>
           <span> . </span>
-          <span className={styles.CreatedAt}>{timeAgo}</span>
+          <time className={styles.CreatedAt}>{timeAgo}</time>
         </div>
         <p>{content}</p>
       </div>
